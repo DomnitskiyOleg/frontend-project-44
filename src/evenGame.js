@@ -40,6 +40,6 @@ const isNumberEven = () => {
       `'${playerAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}`,
     );
   }
-  return console.log(`Congratulations, ${name}`);
+  return console.log(`Congratulations, ${name}!`);
 };
 export default isNumberEven;
