@@ -1,6 +1,23 @@
 import inputOutputOperation from './inputOutputLogic.js';
 import findOutPlayerName from './cli.js';
 
+const findingCorrectAnswer = (a, b, operator) => {
+  let correctAnswer;
+  switch (operator) {
+    case '-':
+      correctAnswer = String(a - b);
+      break;
+    case '+':
+      correctAnswer = String(a + b);
+      break;
+    case '*':
+      correctAnswer = String(a * b);
+      break;
+    default:
+      correctAnswer = null;
+  }
+  return correctAnswer;
+};
 const calculateExpression = () => {
   const name = findOutPlayerName();
   const randomInteger = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
@@ -16,21 +33,9 @@ const calculateExpression = () => {
     b = randomInteger(1, 20);
     randomIndex = randomInteger(0, 2);
     operator = operators[randomIndex];
-    const expression = `${a} ${operator} ${b}`;
-    switch (operator) {
-      case '-':
-        correctAnswer = String(a - b);
-        break;
-      case '+':
-        correctAnswer = String(a + b);
-        break;
-      case '*':
-        correctAnswer = String(a * b);
-        break;
-      default:
-        correctAnswer = null;
-    }
-    const result = inputOutputOperation(expression, correctAnswer, name);
+    const questionForPlayer = `${a} ${operator} ${b}`;
+    correctAnswer = findingCorrectAnswer(a, b, operator);
+    const result = inputOutputOperation(questionForPlayer, correctAnswer, name);
     if (result === 'wrong') {
       return false;
     }
