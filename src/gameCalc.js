@@ -1,5 +1,5 @@
-import inputOutputOperation from './inputOutputLogic.js';
-import findOutPlayerName from './cli.js';
+import gameEngine from './index.js';
+import { randomInteger } from './operationsWithNumbers.js';
 
 const findingCorrectAnswer = (a, b, operator) => {
   let correctAnswer;
@@ -19,27 +19,15 @@ const findingCorrectAnswer = (a, b, operator) => {
   return correctAnswer;
 };
 const calculateExpression = () => {
-  const name = findOutPlayerName();
-  const randomInteger = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+  const gameQuestion = 'What is the result of the expression?';
   const operators = ['-', '+', '*'];
-  let a;
-  let b;
-  let randomIndex;
-  let operator;
-  let correctAnswer;
-  console.log('What is the result of the expression?');
-  for (let i = 0; i <= 2; i += 1) {
-    a = randomInteger(1, 20);
-    b = randomInteger(1, 20);
-    randomIndex = randomInteger(0, 2);
-    operator = operators[randomIndex];
-    const questionForPlayer = `${a} ${operator} ${b}`;
-    correctAnswer = findingCorrectAnswer(a, b, operator);
-    const result = inputOutputOperation(questionForPlayer, correctAnswer, name);
-    if (result === 'wrong') {
-      return false;
-    }
-  }
-  return console.log(`Congratultaions, ${name}!`);
+  const a = randomInteger(1, 20);
+  const b = randomInteger(1, 20);
+  const operatorIndex = randomInteger(0, 2);
+  const operator = operators[operatorIndex];
+  const correctAnswer = findingCorrectAnswer(a, b, operator);
+  const questionForPlayer = `${a} ${operator} ${b}`;
+  return [gameQuestion, questionForPlayer, correctAnswer];
 };
+gameEngine(calculateExpression);
 export default calculateExpression;
