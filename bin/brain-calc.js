@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import calculateExpression from '../src/gameCalc.js';
+import launchGame from '../src/gameCalc.js';
 
-calculateExpression();
+launchGame();

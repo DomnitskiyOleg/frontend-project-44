@@ -9,5 +9,7 @@ const isNumberEven = () => {
   const questionForPlayer = `${randomNumber}`;
   return [gameQuestion, questionForPlayer, correctAnswer];
 };
-gameEngine(isNumberEven);
-export default isNumberEven;
+const launchGame = () => {
+  gameEngine(isNumberEven);
+};
+export default launchGame;

@@ -29,5 +29,7 @@ const calculateExpression = () => {
   const questionForPlayer = `${a} ${operator} ${b}`;
   return [gameQuestion, questionForPlayer, correctAnswer];
 };
-gameEngine(calculateExpression);
-export default calculateExpression;
+const launchGame = () => {
+  gameEngine(calculateExpression);
+};
+export default launchGame;
