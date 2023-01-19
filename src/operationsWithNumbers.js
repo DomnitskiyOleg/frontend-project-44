@@ -13,3 +13,12 @@ export const findGcd = (a, b) => {
   }
   return divider;
 };
+export const generateProgression = (startNumber, growIndex, progressionLength) => {
+  let iteration = 1;
+  const result = [];
+  for (let i = startNumber; iteration <= progressionLength; i += growIndex) {
+    iteration += 1;
+    result.push(i);
+  }
+  return result;
+};
