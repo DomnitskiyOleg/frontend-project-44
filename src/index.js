@@ -14,7 +14,7 @@ const gameEngine = (roundData) => {
       console.log('Correct!');
     } else {
       console.log(
-        `'${playerAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}`,
+        `'${playerAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`,
       );
       return false;
     }
