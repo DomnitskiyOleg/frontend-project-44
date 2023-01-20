@@ -1,5 +1,5 @@
-import gameEngine from './index.js';
-import { randomInteger } from './operationsWithNumbers.js';
+import gameEngine from '../index.js';
+import { randomInteger } from '../operationsWithNumbers.js';
 
 const findingCorrectAnswer = (a, b, operator) => {
   let correctAnswer;

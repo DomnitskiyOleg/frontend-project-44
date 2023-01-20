@@ -1,5 +1,5 @@
-import gameEngine from './index.js';
-import { randomInteger, checkIsNumberEven } from './operationsWithNumbers.js';
+import gameEngine from '../index.js';
+import { randomInteger, checkIsNumberEven } from '../operationsWithNumbers.js';
 
 const isNumberEven = () => {
   const findingCorrectAnswer = (argument) => (argument === true ? 'yes' : 'no');

@@ -1,5 +1,5 @@
-import gameEngine from './index.js';
-import { findGcd, randomInteger } from './operationsWithNumbers.js';
+import gameEngine from '../index.js';
+import { findGcd, randomInteger } from '../operationsWithNumbers.js';
 
 const greatestCommonDiveder = () => {
   const a = randomInteger(1, 20);

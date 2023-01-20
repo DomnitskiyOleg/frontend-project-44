@@ -1,5 +1,5 @@
-import gameEngine from './index.js';
-import { generateProgression, randomInteger } from './operationsWithNumbers.js';
+import gameEngine from '../index.js';
+import { generateProgression, randomInteger } from '../operationsWithNumbers.js';
 
 const findMissedNumberInProgression = () => {
   const gameQuestion = 'What number is missing in the progression?';
