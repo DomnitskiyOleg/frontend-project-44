@@ -9,9 +9,8 @@ System requirements: *nix OS
 npm link
 ```
 [![asciicast](https://asciinema.org/a/551987.svg)](https://asciinema.org/a/551987)
-
 ## There are 5 types of the Game:
-Game Even Number, Game Calcultaion, Game Greatest Common Divider, Game Progression, Game Prime Number.
+Game Even Number, Game Calcultaion, Game Greatest Common Divisor, Game Progression, Game Prime Number.
 ### To play Game Even Number:
 ```
 brain-even

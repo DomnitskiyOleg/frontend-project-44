@@ -1,7 +1,7 @@
 import gameEngine from '../index.js';
 import { findGcd, randomInteger } from '../operationsWithNumbers.js';
 
-const greatestCommonDiveder = () => {
+const greatestCommonDivisor = () => {
   const a = randomInteger(1, 20);
   const b = randomInteger(1, 20);
   const gameQuestion = 'Find the greatest common divisor of given numbers.';
@@ -10,6 +10,6 @@ const greatestCommonDiveder = () => {
   return [gameQuestion, questionForPlayer, correctAnswer];
 };
 const launchGame = () => {
-  gameEngine(greatestCommonDiveder);
+  gameEngine(greatestCommonDivisor);
 };
 export default launchGame;
