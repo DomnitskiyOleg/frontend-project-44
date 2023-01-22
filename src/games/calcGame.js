@@ -1,5 +1,5 @@
 import gameEngine from '../index.js';
-import { randomInteger } from '../operationsWithNumbers.js';
+import getRandomInteger from '../operationsWithNumbers.js';
 
 const findingCorrectAnswer = (a, b, operator) => {
   let correctAnswer;
@@ -18,18 +18,18 @@ const findingCorrectAnswer = (a, b, operator) => {
   }
   return correctAnswer;
 };
+const gameQuestion = 'What is the result of the expression?';
 const calculateExpression = () => {
-  const gameQuestion = 'What is the result of the expression?';
   const operators = ['-', '+', '*'];
-  const a = randomInteger(1, 20);
-  const b = randomInteger(1, 20);
-  const operatorIndex = randomInteger(0, 2);
+  const a = getRandomInteger(1, 20);
+  const b = getRandomInteger(1, 20);
+  const operatorIndex = getRandomInteger(0, 2);
   const operator = operators[operatorIndex];
   const correctAnswer = findingCorrectAnswer(a, b, operator);
   const questionForPlayer = `${a} ${operator} ${b}`;
-  return [gameQuestion, questionForPlayer, correctAnswer];
+  return [questionForPlayer, correctAnswer];
 };
 const launchGame = () => {
-  gameEngine(calculateExpression);
+  gameEngine(gameQuestion, calculateExpression);
 };
 export default launchGame;

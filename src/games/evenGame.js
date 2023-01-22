@@ -1,15 +1,15 @@
 import gameEngine from '../index.js';
-import { randomInteger, checkIsNumberEven } from '../operationsWithNumbers.js';
+import getRandomInteger from '../operationsWithNumbers.js';
 
+const checkIsNumberEven = (number) => number % 2 === 0;
+const gameQuestion = 'Answer "yes" if the number is even, otherwise answer "no".';
 const isNumberEven = () => {
-  const findingCorrectAnswer = (argument) => (argument === true ? 'yes' : 'no');
-  const gameQuestion = 'Answer "yes" if the number is even, otherwise answer "no".';
-  const randomNumber = randomInteger(1, 10);
-  const correctAnswer = findingCorrectAnswer(checkIsNumberEven(randomNumber));
+  const randomNumber = getRandomInteger(1, 10);
+  const correctAnswer = checkIsNumberEven(randomNumber) ? 'yes' : 'no';
   const questionForPlayer = `${randomNumber}`;
-  return [gameQuestion, questionForPlayer, correctAnswer];
+  return [questionForPlayer, correctAnswer];
 };
 const launchGame = () => {
-  gameEngine(isNumberEven);
+  gameEngine(gameQuestion, isNumberEven);
 };
 export default launchGame;

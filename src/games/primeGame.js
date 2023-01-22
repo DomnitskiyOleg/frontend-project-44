@@ -1,14 +1,25 @@
 import gameEngine from '../index.js';
-import { checkIsNumberPrime, randomInteger } from '../operationsWithNumbers.js';
+import getRandomInteger from '../operationsWithNumbers.js';
 
+export const checkIsNumberPrime = (number) => {
+  if (number === 1) {
+    return false;
+  }
+  for (let i = 2; i < number; i += 1) {
+    if (number % i === 0 || number === 1) {
+      return false;
+    }
+  }
+  return true;
+};
+const gameQuestion = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const isNumberPrime = () => {
-  const gameQuestion = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  const number = randomInteger(1, 50);
+  const number = getRandomInteger(1, 50);
   const questionForPlayer = number;
   const correctAnswer = checkIsNumberPrime(number) ? 'yes' : 'no';
-  return [gameQuestion, questionForPlayer, correctAnswer];
+  return [questionForPlayer, correctAnswer];
 };
 const launchGame = () => {
-  gameEngine(isNumberPrime);
+  gameEngine(gameQuestion, isNumberPrime);
 };
 export default launchGame;
